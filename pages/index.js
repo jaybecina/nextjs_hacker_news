@@ -75,8 +75,8 @@ export default function Home({ articles }) {
           </p>
         }
       >
-        {articleList?.map((d) => (
-          <AnimatePresence>
+        {articleList?.map((d, i) => (
+          <AnimatePresence key={i}>
             <Link href={`/article/${d.id}`}>
               <motion.div
                 className={styles.card}
