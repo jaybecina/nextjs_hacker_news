@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+}
+nav {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #395697;
+  color: #fff;
+}
+.nav__menu-bar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  cursor: pointer;
+}
+.nav__menu-bar div {
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.nav__menu-list {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  width: 288px;
+  row-gap: 24px;
+  right: -288px;
+  padding: 24px 16px;
+  transition: all 0.2s;
+  min-height: calc(100vh - 60px);
+  background-color: #395697;
+}
+.nav__menu-list.active {
+  right: 0;
+}
+.nav__link {
+  font-size: 18px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.nav__link:hover {
+  font-weight: bold;
+}
+
+.center {
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu-bar {
+    display: none;
+  }
+  .nav__menu-list {
+    position: unset;
+    flex-direction: row;
+    min-height: fit-content;
+    width: fit-content;
+    column-gap: 24px;
+    align-items: center;
+  }
+  .nav__link::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 6px;
+    bottom: -16px;
+    left: 0;
+    background-color: #fff;
+    transition: all 0.2s;
+  }
+
+  .nav__link:hover:before {
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+}
+.text-center {
+  text-align: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+}
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #333;
+  line-height: 24px;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+.news-card {
+  border-bottom: 1px solid #eee;
+  padding: 16px;
+}
+
+/* Scrollbar */
+html::-webkit-scrollbar-track {
+  background-color: #ffffff;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f5f5f5;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #c9c8c8;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #b3b2b2;
+}
