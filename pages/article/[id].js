@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import NewsImage1 from "../../assets/images/hackernewsimage.jpg";
 import styles from "../../styles/Article.module.scss";
-import Link from "next/link";
 
 export default function Article({ article }) {
   const router = useRouter();
@@ -80,11 +79,9 @@ export default function Article({ article }) {
               <p>
                 <strong>Click here to go to link:</strong>
               </p>
-              <Link href={article.url} legacyBehavior>
-                <a target="_blank">
-                  <p className={styles.link}>{article.url}</p>
-                </a>
-              </Link>
+              <a href={article.url} target="_blank" rel="noreferrer">
+                <p className={styles.link}>{article.url}</p>
+              </a>
             </div>
           </div>
         </motion.div>

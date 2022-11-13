@@ -34,7 +34,7 @@ export default function Home({ articles }) {
         </motion.h1>
       </AnimatePresence>
       {articleList?.map((d) => (
-        <AnimatePresence>
+        <AnimatePresence key={d.id}>
           <Link href={`/article/${d.id}`}>
             <motion.div
               className={styles.card}
@@ -83,7 +83,7 @@ export default function Home({ articles }) {
           </Link>
         </AnimatePresence>
       ))}
-      {articleList && <p>You've seen all the news.</p>}
+      {articleList && <p>You have seen all the news.</p>}
     </div>
   );
 }
